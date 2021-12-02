@@ -1,12 +1,13 @@
 #!/bin/sh 
 
-j=0
-k=0
+aim=0
+horizontal=0
+depth=0
 
 while read LINE; do
   n=`echo $LINE | cut -d' ' -f2`
-  echo $LINE | grep "down" > /dev/null && j=$(($j + $n))
-  echo $LINE | grep "up" > /dev/null && j=$(( $j - $n )) 
-  echo $LINE | grep "forward" > /dev/null && k=$(( $k + $n )) 
+  echo $LINE | grep "down" > /dev/null && aim=$(($aim + $n))
+  echo $LINE | grep "up" > /dev/null && aim=$(( $aim - $n ))
+  echo $LINE | grep "forward" > /dev/null && horizontal=$(( $horizontal + $n )) && depth=$(( $depth + $aim * $n ))
 done < input.txt
-echo j : $j - k : $k - j*k $(($j * $k))
+echo depth : $depth - horizontal : $horizontal - depth*horizontal $(($depth * $horizontal))
