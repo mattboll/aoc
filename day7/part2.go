@@ -2,20 +2,11 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"strconv"
 	"strings"
-)
 
-func ReadFile() []string {
-	file, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		panic(err)
-	}
-	fileContent := string(file)
-	slicedContent := strings.Split(fileContent, "\n")
-	return slicedContent
-}
+	"github.com/mattboll/aoc2021/lib"
+)
 
 func calcSingleDist(n1 int, n2 int) int {
 	d := n2 - n1
@@ -34,7 +25,7 @@ func calcDist(crabs []int, d int) int {
 }
 
 func main() {
-	strLines := ReadFile()
+	strLines := lib.ReadFile()
 	crabs := []int{}
 	min := 1000
 	max := 0
