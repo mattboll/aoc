@@ -4,13 +4,20 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/mattboll/aoc/lib"
 )
 
 func main() {
+	fmt.Println("--2023 day 02 solution--")
+	start := time.Now()
 	part1()
+	fmt.Println(time.Since(start))
+
+	start = time.Now()
 	part2()
+	fmt.Println(time.Since(start))
 }
 
 func part1() {
