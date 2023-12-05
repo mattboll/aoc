@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	fmt.Println("--2023 day 03 solution--")
+	fmt.Println("--2023 day 04 solution--")
 	start := time.Now()
 	part1()
 	fmt.Println(time.Since(start))
