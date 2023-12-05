@@ -1,12 +1,12 @@
 package lib
 
 import (
-	"io/ioutil"
+	"os"
 	"strings"
 )
 
 func ReadFile() []string {
-	file, err := ioutil.ReadFile("input.txt")
+	file, err := os.ReadFile("input.txt")
 	if err != nil {
 		panic(err)
 	}
