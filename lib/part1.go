@@ -8,12 +8,15 @@ import (
 )
 
 func ReadFile() []string {
-	file, err := os.ReadFile("input.txt")
+	file, err := os.ReadFile("input")
 	if err != nil {
 		panic(err)
 	}
 	fileContent := string(file)
 	slicedContent := strings.Split(fileContent, "\n")
+	if slicedContent[len(slicedContent)-1] == "" {
+		slicedContent = slicedContent[:len(slicedContent)-1]
+	}
 	return slicedContent
 }
 
