@@ -1,8 +1,10 @@
 package lib
 
 import (
+	"fmt"
 	"os"
 	"strings"
+	"time"
 )
 
 func ReadFile() []string {
@@ -27,4 +29,10 @@ func Min(a, b int) int {
 		return a
 	}
 	return b
+}
+
+func RunAndMeasure(fn func()) {
+	start := time.Now()
+	fn()
+	fmt.Println(time.Since(start))
 }
