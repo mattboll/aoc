@@ -3,6 +3,7 @@ package lib
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -38,4 +39,12 @@ func RunAndMeasure(fn func()) {
 	start := time.Now()
 	fn()
 	fmt.Println(time.Since(start))
+}
+
+func Atoi(s string) int {
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		panic(err)
+	}
+	return i
 }
